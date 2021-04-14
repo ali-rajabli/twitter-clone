@@ -205,12 +205,90 @@ html, body {
     font-size: 14px;
 }
 
+/* Login Page */
+.login-inner {
+    padding-top: 20px;
+    width: 100%;
+    max-width: 336px;
+    margin: auto
+}
+.login-inner img {
+    height: 40px;
+
+}
+.login-inner h1 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 31px;
+    font-weight: 900;
+    
+}
+
+.login-inner .btn{
+    width: 100%;
+    background-color: var(--main-bg-color);
+    height: 48px;
+    margin-top: 30px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    outline: none;
+}
+.login-inner .btn:hover {
+    background-color: rgb(26,145,218);
+    
+}
+
+.login-inner .form-floating label {
+    color: rgb(133,133,133);
+    padding-top: 20px;
+}
+
+.login-inner input[type=email],
+.login-inner input[type=password] {
+    font-size: 18px;
+}
+
+.login-inner input[type=email]:focus,
+.login-inner input[type=password]:focus {
+    outline: none ;
+    border: 2px solid var(--main-bg-color) ;
+    box-shadow: none;
+    font-size: 20px;
+}
+
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label{
+    color: rgb(26,145,218);
+}
+
+.login-forgot {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-forgot span a {
+    color: var(--main-bg-color);
+    text-decoration: none;
+}
+.login-forgot span:hover {
+    border-bottom: 1px solid var(--main-bg-color);
+}
+
+#forgot-pass::after {
+    content: '.';
+    height: 1px;
+    display: inline-block;
+    color: #5b7083;
+    margin: 0 5px;
+    transform: translateY(-5px);
+}
 
 @media only screen and (max-width: 992px) {
     .footer-nav ul li a {
         line-height: 30px;
     }
-    .main {
+    .main.unauthorized {
         padding-top: 40px;
 
         flex-direction: column-reverse;
@@ -240,6 +318,8 @@ html, body {
     }
     
 }
+
+
 
 
 @media only screen and (max-width: 600px) {
