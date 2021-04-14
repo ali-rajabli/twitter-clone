@@ -275,14 +275,14 @@ html, body {
     border-bottom: 1px solid var(--main-bg-color);
 }
 
-#forgot-pass::after {
-    content: '.';
+#separate {
     height: 1px;
     display: inline-block;
     color: #5b7083;
-    margin: 0 5px;
+    margin: 0 6px;
     transform: translateY(-5px);
 }
+
 
 @media only screen and (max-width: 992px) {
     .footer-nav ul li a {
