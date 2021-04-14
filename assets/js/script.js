@@ -1,13 +1,14 @@
-var input= document.getElementById('floatingInput')
+var input= document.getElementById('floatingInput');
+var password = document.getElementById('floatingPassword');
 
-var inputValue1 = input.value
-
-
-
-input.oninput = function () {
-    if(inputValue1 !== null) {
-        document.getElementById('btn-disable').classList.remove('disabled')
-        document.getElementById('btn-disable').classList.add('active')
+function validate () {
+    if (input.value.trim() && password.value.trim()) {
+        document.querySelector('.login-btn').classList.remove('disabled');
+    } else {
+        document.querySelector('.login-btn').classList.add('disabled');
     }
 }
 
+input.oninput = validate;
+password.oninput = validate;
+ 
