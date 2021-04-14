@@ -181,11 +181,33 @@ html, body {
     flex-wrap: wrap;
     
 }
+
+
 .footer-nav ul li:not(:last-child)  {
    margin-right: 16px;
 }
 
+.footer-nav ul li {
+   position: relative;
+   line-height: 20px;
+ }
 
+.footer-nav ul li::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    border: 1px solid #5b7083;
+    
+ }
+ 
+ .footer-nav ul li:hover::after {
+   visibility: visible;
+    
+ }
 .footer-nav ul li a {
     text-decoration: none;
     color: #5b7083;
