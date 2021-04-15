@@ -18,25 +18,33 @@
 
     <section class="main signup">
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="signup-inner">
                 <div class="signup-header">
                     <img src="./assets/img/twitter-blue.svg" class="twitter-blue center" alt="">
-                    <button id="btn-disable" type="button" class="btn next-btn">Next</button>
+                    <button id="btn-disable" type="button" class="btn next-btn disabled">Next</button>
                 </div>
                 <div class="signup-inputs">
                     <h1>Create your account</h1>
-                    <div class="form-floating mb-4">
+                    <div class="form-floating name mb-4">
                         <input type="text" class="form-control" id="floatingInput" placeholder="Name">
                         <label for="floatingInput">Name</label>
                     </div>
 
-                    <div class="form-floating">
-                        <input type="tel" class="form-control " id="FloatingInput" placeholder="Phone">
+                    <div class="form-floating phone">
+                        <input  type="tel" class="form-control " id="FloatingInput" spellcheck="true" autocorrect="on" placeholder="Phone">
                         <label for="floatingInput">Phone</label>
+                        <!-- <div id="" class="invalid-feedback">
+                            Please enter a valid phone nubmer
+                          </div> -->
+                    </div>
+                    <div class="form-floating email">
+                        <input spellcheck="true" type="email" class="form-control " id="FloatingInput" placeholder="Phone">
+                        <label for="floatingInput">Email</label>
                     </div>
                     <div class="signup-hint">
-                        <a href="">Use email instead</a>
+                        <a href="" id='changeToEmail'>Use email instead</a>
+                        <a href="" id='changeToPhone'>Use phone instead</a>
                         <span>Date of birth</span>
                         <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
                     </div>
@@ -50,7 +58,7 @@
                         </select>
                             <label for="floatingSelect">Month</label>
                         </div>
-                        <div class="form-floating col-3 me-2">
+                        <div class="form-floating col-2 me-2">
                             <select class="form-select select-day" id="floatingSelect" aria-label="Floating label select example">
                           <option selected></option>
                           <option value="1">1</option>
@@ -87,7 +95,7 @@
                         </select>
                             <label for="floatingSelect">Day</label>
                         </div>
-                        <div class="form-floating col-3">
+                        <div class="form-floating col-4">
                             <select class="form-select select-year" id="floatingSelect" aria-label="Floating label select example">
                           <option selected></option>
                           <option value="1">One</option>
