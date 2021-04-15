@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 html,
 body,
 div,
@@ -363,6 +366,7 @@ body {
 .form-floating>.form-control:not(:placeholder-shown)~label,
 .form-floating>.form-select~label {
     color: rgb(26, 145, 218);
+    opacity: 1;
 }
 
 .login-forgot {
@@ -456,10 +460,17 @@ body {
     box-shadow: none;
 }
 
+
+
 .signup-inner .form-floating label {
     color: #5b7083;
     padding-top: 20px;
 }
+
+.form-select:focus {
+    background-image: url('../img/arrow-blue.svg')
+}
+
 
 .signup-hint {
     margin-top: 30px;
@@ -493,22 +504,25 @@ body {
 
 .date-inputs {
     display: flex;
+    width: 100%;
+    max-width: 520px;
 }
 
 .select-month {
-    /* width: 259px; */
+     /* width: 259;*/
     margin-right: 12px;
     cursor: pointer;
 }
 
 .select-day {
-    /* width: 117px; */
+    /* width: 117px;*/
     margin-right: 12px;
     cursor: pointer;
 }
 
+
 .select-year {
-    /* width: 137px; */
+     /* width: 137px;*/
     cursor: pointer;
 }
 
@@ -519,6 +533,8 @@ body {
     border: 2px solid var(--main-bg-color);
     box-shadow: none;
 }
+
+
 
 @media only screen and (max-width: 992px) {
     .footer-nav ul li a {
@@ -571,4 +587,6 @@ body {
         max-width: 300px;
         margin-right: 0;
     }
+
+    
 }
