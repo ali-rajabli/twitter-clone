@@ -447,14 +447,30 @@ body {
     margin-top: 10px;
 }
 
+
+#changeToPhone {
+    display: none;
+}
+.signup-inner .form-floating.email {
+    display: none;
+}
+
+
+
+
 .signup-inner input[type=text],
-.signup-inner input[type=tel] {
+.signup-inner input[type=tel],
+.signup-inner input[type=email] {
     font-size: 16px;
     color: #0f1419;
 }
 
+
+
+
 .signup-inner input[type=text]:focus,
-.signup-inner input[type=tel]:focus {
+.signup-inner input[type=tel]:focus,
+.signup-inner input[type=email]:focus {
     outline: none;
     border: 2px solid var(--main-bg-color);
     box-shadow: none;
@@ -480,6 +496,7 @@ body {
 }
 
 .signup-hint a {
+    width: fit-content;
     margin-bottom: 35px;
     font-size: 15px;
     color: var(--main-bg-color);
