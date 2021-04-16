@@ -27,20 +27,21 @@
                 <div class="signup-inputs">
                     <h1>Create your account</h1>
                     <div class="form-floating name mb-4">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Name">
-                        <label for="floatingInput">Name</label>
+                        <input type="text" class="form-control" id="floatingNameInput" placeholder="Name" maxlength="50">
+                        <span id='charCount'></span>
+                        <label for="floatingNameInput">Name</label>
                     </div>
 
                     <div class="form-floating phone">
-                        <input  type="tel" class="form-control " id="FloatingInput" spellcheck="true" autocorrect="on" placeholder="Phone">
-                        <label for="floatingInput">Phone</label>
+                        <input  type="tel" class="form-control"  id="floatingPhoneInput" spellcheck="true" autocorrect="on" placeholder="Phone">
+                        <label for="floatingPhoneInput">Phone</label>
                         <!-- <div id="" class="invalid-feedback">
                             Please enter a valid phone nubmer
                           </div> -->
                     </div>
                     <div class="form-floating email">
-                        <input spellcheck="true" type="email" class="form-control " id="FloatingInput" placeholder="Phone">
-                        <label for="floatingInput">Email</label>
+                        <input spellcheck="true" type="email" class="form-control " id="floatingEmailInput" placeholder="Email">
+                        <label for="floatingEmailInput">Email</label>
                     </div>
                     <div class="signup-hint">
                         <a href="" id='changeToEmail'>Use email instead</a>

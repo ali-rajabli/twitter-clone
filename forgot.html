@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <section class="main forget">
+    <section class="main forgot">
 
         
         <div class="container-fluid p-0">
@@ -25,30 +25,49 @@
                         <img src="./assets/img/twitter-blue.svg" alt="">
                         <span>Password Reset</span>
                     </div>
-                    <div class="dropdown bg-white">
-                        <button class="btn bg-white btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div  class="dropdown bg-white">
+                        <button class="btn bg-white btn-secondary dropdown-toggle"  id='langdrop' >
                         English 
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li>
-                                <a class="dropdown-item" href="#">Italy</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">spain</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="langdrop">
+                           <ul>
+                            <li> <a class="dropdown-item" href="#">Italiano</a></li>
+                            <li><a class="dropdown-item" href="#">Dansk</a></li>
+                            <li><a class="dropdown-item" href="#">Polski</a></li>
+                            <li><a href="" class="dropdown-item">Indonesian</a></li>
+                            <li><a href="" class="dropdown-item">Suomi</a></li>
+                            <li><a href="" class="dropdown-item">Malay</a></li>
+                            <li><a href="" class="dropdown-item">Magyar</a></li>
+                           </ul>
+
+                           <ul>
+                            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                            <li><a class="dropdown-item" href="#">Français</a></li>
+                            <li><a class="dropdown-item" href="#">Norsk</a></li>
+                            <li><a class="dropdown-item" href="#">Français</a></li>
+                            <li><a class="dropdown-item" href="#">Norsk</a></li>
+                            <li><a class="dropdown-item" href="#">Русский</a></li>
+                            <li><a class="dropdown-item" href="#">Čeština</a></li>
+                           </ul>
                         </ul>
+                        
                     </div>
                 </div>
             </div>
-            <div class="forget-inner">
+            <div class="forgot-inner">
                
-                <div class="forget-content">
+                <div class="forgot-content">
                     <h1>
                         Find your Twitter account
                     </h1>
                     <p>Enter your email, phone number, or username.</p>
                     <div class="form-floating mb-4">
-                        <input type=" text " class="form-control" id="floatingForgot">
+                        <input type="text" class="form-control" id="floatingForgot">
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            We need this information to find your account.
+                          </div>
                         <button id="btn-disable" type="button" class="btn search-btn">Search</button>
+                        
                     </div>
                 </div>
             </div>
