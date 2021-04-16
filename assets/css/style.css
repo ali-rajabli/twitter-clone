@@ -450,11 +450,21 @@ body {
 }
 
 .signup-inner input[type=text]:focus,
-.signup-inner input[type=tel]:focus {
+.signup-inner input[type=tel]:focus,
+.signup-inner input[type=email]:focus{
     outline: none;
     border: 2px solid var(--main-bg-color);
     box-shadow: none;
 }
+
+.signup-inner #charCount {
+    position: absolute;
+    color: #5b7083;
+    font-size: 13px;
+    top: 10px;
+    right: 10px;
+}
+
 
 .signup-inner .form-floating label {
     color: #5b7083;
@@ -469,6 +479,7 @@ body {
 }
 
 .signup-hint a {
+    width: fit-content;
     margin-bottom: 35px;
     font-size: 15px;
     color: var(--main-bg-color);
@@ -489,6 +500,13 @@ body {
     font-size: 15px;
     color: #5b7083;
     line-height: 20px;
+}
+
+.signup-inputs .form-floating.email {
+    display: none;
+}
+#changeToPhone {
+    display: none;
 }
 
 .date-inputs {
@@ -521,24 +539,23 @@ body {
 }
 
 
-/*Forget Password page */
+/* Forget Password page */
 
-.forget-inner {
+.forgot-inner {
     max-width: 590px;
     width: 100%;
     margin: 0 auto;
 }
 
-.nav {
+.main.forgot .nav {
     
     box-shadow: 0 0 3px #aaa;
     border-bottom: 1px solid #e1e8ed;
     border-bottom: 0 solid rgba(0, 0, 0, 0.25);
     color: #66757f;
-    font-size: 14px;
     background: white;
 }
-.nav-inner {
+.main.forgot  .nav-inner {
     min-height: 40px;
     max-width: 590px;
     width: 100%;
@@ -547,37 +564,86 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.nav-logo {
+.main.forgot .nav-logo {
     display: flex;
     align-items: center;
 }
 
-.nav-logo img {
+.main.forgot  .nav-logo img {
     height: 22px;
     margin-right: 6px;
 }
 
-.nav-logo span {
+.main.forgot .nav-logo span {
     font-size: 16px;
     color: #66757f
 }
 
-.dropdown .btn {
+
+.main.forgot .dropdown-menu {
+    top: 110%;
+    left: -113%;
+    border-radius: 4px !important;
+}
+
+.main.forgot .dropdown-menu::before {
+    position: absolute;
+    right: 15px;
+    top: -8px;
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    -webkit-transform: rotate(225deg);
+
+}
+
+#langdrop,
+#langdrop + .dropdown-menu .dropdown-item {
+    font-size: 14px;
+    color: #66757f;
+}
+.main.forgot .dropdown.bg-white:hover .dropdown-menu {
+    display: flex !important;
+}
+
+.main.forgot .dropdown-item:hover {
+    color: #fff !important;
+    background-color: #66757f;
+}
+
+
+.btn-check:active+.btn-secondary:focus, 
+.btn-check:checked+.btn-secondary:focus,
+.btn-secondary.active:focus, 
+.btn-secondary:active:focus, 
+.show>.btn-secondary.dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+    box-shadow: none;
+
+}
+.main.forgot  .dropdown .btn {
     color: #66757f;
     border: none;
 }
 
-.forget-content {
+.forgot-content {
     margin-top: 46px
 }
 
-.forget-content h1 {
+.forgot-content h1 {
     font-size: 28px;
     font-weight: 900;
     margin-bottom: 36px;
 }
 
-.forget-content p {
+.forgot-content p {
     font-size: 14px;
     color: #292f33;
 }
@@ -592,13 +658,26 @@ body {
         margin-top: 20px;
 }
 
+
+
+#floatingForgot.is-invalid {
+    border-color: #dc3545;
+    color: #dc3545;
+
+}
+#floatingForgot.is-invalid:focus {
+    box-shadow: 0 0 0 1px #dc3545;
+    border-color: #dc3545;
+}
+
+
 #floatingForgot:focus {
     box-shadow: 0 0 0 1px #99cdf4;
     border-color: #99cdf4;
 }
 
 
-.forget-content .search-btn {
+.forgot-content .search-btn {
     width: 81px;
     padding: 0 15px;
     background-color: var(--main-bg-color);
@@ -611,15 +690,16 @@ body {
     font-size: 14px;
 }
 
-.forget-content .search-btn:hover {
+.forgot-content .search-btn:hover {
     background-color: rgb(26, 145, 218);
 
 }
 
-.forget-content .search-btn:focus {
+.forgot-content .search-btn:focus {
     border-color: #1da1f2;
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px #71c9f8;
 }
+
 
 @media only screen and (max-width: 992px) {
     .footer-nav ul li a {
@@ -657,7 +737,7 @@ body {
 
 @media only screen and (max-width: 768px) { 
     .nav-inner,
-    .forget-inner {
+    .forgot-inner {
         padding: 0 40px;
     }
 }
