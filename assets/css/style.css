@@ -438,7 +438,7 @@ body {
     background-color: rgb(26, 145, 218);
 }
 
-.signup-inner img {
+.main.signup .signup-inner img {
     height: 29px;
     margin-top: 10px;
 }
@@ -470,6 +470,7 @@ body {
     color: #5b7083;
     padding-top: 20px;
 }
+
 
 .signup-hint {
     margin-top: 30px;
@@ -536,8 +537,16 @@ body {
     outline: none;
     border: 2px solid var(--main-bg-color);
     box-shadow: none;
+    background-image: url(../img/arrow-blue.svg);
 }
 
+.select-month:focus~label,
+.select-day:focus~label,
+.select-year:focus~label{
+     color:var(--main-bg-color) !important;
+ }
+
+ 
 
 /* Forget Password page */
 
@@ -581,7 +590,8 @@ body {
 
 
 .main.forgot .dropdown-menu {
-    top: 110%;
+    line-height: initial;
+    top: 100%;
     left: -113%;
     border-radius: 4px !important;
 }
@@ -595,10 +605,15 @@ body {
     width: 15px;
     height: 15px;
     background: #FFFFFF;
-    border-right: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
+    border-right: 1px solid  #aaa;
+    border-bottom: 1px solid  #aaa;
+    transform: rotate(225deg);
     -webkit-transform: rotate(225deg);
 
+}
+
+.main.forgot .dropdown {
+    line-height: 40px;
 }
 
 #langdrop,
@@ -606,7 +621,7 @@ body {
     font-size: 14px;
     color: #66757f;
 }
-.main.forgot .dropdown.bg-white:hover .dropdown-menu {
+.main.forgot .dropdown:hover .dropdown-menu {
     display: flex !important;
 }
 
@@ -648,7 +663,7 @@ body {
     color: #292f33;
 }
 
-#floatingForgot{
+#forgotInput{
         height: 34px;
         padding: 7px 15px 5px;
         width: 332px ;
@@ -660,18 +675,18 @@ body {
 
 
 
-#floatingForgot.is-invalid {
+#forgotInput.is-invalid {
     border-color: #dc3545;
     color: #dc3545;
 
 }
-#floatingForgot.is-invalid:focus {
+#forgotInput.is-invalid:focus {
     box-shadow: 0 0 0 1px #dc3545;
     border-color: #dc3545;
 }
 
 
-#floatingForgot:focus {
+#forgotInput:focus {
     box-shadow: 0 0 0 1px #99cdf4;
     border-color: #99cdf4;
 }
@@ -696,8 +711,151 @@ body {
 }
 
 .forgot-content .search-btn:focus {
-    border-color: #1da1f2;
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px #71c9f8;
+}
+
+
+/* SignUp Page Step 2 */
+
+.close-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color .1s linear;
+
+}
+.close-wrapper:hover {
+    background:rgba(29, 161, 242, 0.1) ;
+}
+
+.close-wrapper > button {
+    opacity: 1;
+    background: transparent url(../img/close-blue.svg) center/1em auto no-repeat;
+    height: 20px;
+    width: 20px;
+    
+}
+
+.close-wrapper > button:hover {
+    opacity: 1;
+}
+.close-wrapper > button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.step2-track {
+    padding-left: 10px;
+}
+
+.step2-track .track-check > label{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+   
+}
+
+.step2-track .check-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 12px;
+    left: -15px;
+    top: 4px;
+    transform: translateX(15px);
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color .1s linear;
+    cursor: pointer;
+}
+.step2-track .check-wrapper.active:hover {
+    background-color: rgba(29,161,242, 0.1);
+}
+
+.step2-track .check-bg {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-color: rgb(91, 112, 131);
+    border-radius: 4px;
+}
+.step2-track .check-bg.active{
+   border: none;
+   outline: none;
+    background-color: var(--main-bg-color); 
+
+}
+.step2-track .check-bg img{
+    opacity: 0;
+   height: 14px !important;
+   width: 16px;
+   z-index: 999;
+   margin-top: 0 !important;
+}
+.step2-track .check-bg.active img {
+    opacity: 1;
+
+}
+.step2-track .check-wrapper> input{
+    opacity: 0;
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+   position: absolute;
+}
+
+.check-wrapper:hover {
+    background:rgba(91, 112, 131, 0.1) ;
+}
+
+.step2-track h1 {
+    margin-top: 10px;
+    margin-bottom: 44px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #0f1419;
+}
+
+.step2-track strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f1419;
+}
+.step2-track p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #212529;
+    margin-top: 12px;
+    line-height: 20px;
+    margin-bottom: 40px;
+}
+.step2-track span {
+    font-size: 15px;
+    color: #5b7083;
+    margin-top: 40px;
+    line-height: 20px;
+}
+
+.step2-track span a {
+    font-size: 15px;
+    color: rgb(27, 149, 224);
+    text-decoration: none;
+}
+.step2-track span a:hover {
+    text-decoration: underline;
 }
 
 
@@ -746,7 +904,7 @@ body {
 
 @media only screen and (max-width: 600px) {
 
-    #floatingForgot {
+    #forgotInput {
         width: 282px;
     }
 
