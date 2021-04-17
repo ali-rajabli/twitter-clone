@@ -19,10 +19,10 @@ $('#changeToPhone').click(function (event) {
 
 // ForgotPassword page  check if input is empty // 
 function checkInp() {
-    if (!$('#floatingForgot').val().trim()) {
-        $('#floatingForgot').addClass('is-invalid')
+    if (!$('#forgotInput').val().trim()) {
+        $('#forgotInput').addClass('is-invalid')
     } else {
-        $('#floatingForgot').removeClass('is-invalid')
+        $('#forgotInput').removeClass('is-invalid')
     }
 
 }
@@ -37,10 +37,8 @@ $('.search-btn').on('click', function () {
 var text_max = 50;
 $('#charCount').html('0 / ' + text_max);
 
-$('#floatingNameInput').keyup(function () {
-    var text_length = $('#floatingNameInput').val().trim().length;
-    // var text_remaining = text_max - text_length;
-
+$('#signupNameInput').keyup(function () {
+    var text_length = $('#signupNameInput').val().trim().length;
     $('#charCount').html(text_length + ' / ' + text_max);
 });
 
@@ -60,9 +58,28 @@ $('#floatingNameInput').keyup(function () {
 // })
 
 
+
+
+
+// SignUp Page Step-2 Checkbox activation //
+
+var trackCheckLabel = $('#trackCheckLabel') 
+var trackCheckInput = $('#trackCheckBox')
+
+trackCheckLabel.on('click',function() {
+    $('.check-bg').toggleClass('active')
+    $('.check-wrapper').toggleClass('active')
+    trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
+})
+
+trackCheckInput.on('click',function(){
+    trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
+})
+
+
 // Login Page check if both inputs are empty  //
-var input = document.getElementById('floatingInput');
-var password = document.getElementById('floatingPassword');
+var input = document.getElementById('loginEmailInput');
+var password = document.getElementById('loginPasswordInput');
 
 
 function validate() {
