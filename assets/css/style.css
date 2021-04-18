@@ -821,6 +821,9 @@ body {
     background:rgba(91, 112, 131, 0.1) ;
 }
 
+#trackCheckLabel {
+    margin-bottom: 40px;
+}
 .step2-track h1 {
     margin-top: 10px;
     margin-bottom: 44px;
@@ -840,7 +843,6 @@ body {
     color: #212529;
     margin-top: 12px;
     line-height: 20px;
-    margin-bottom: 40px;
 }
 .step2-track span {
     font-size: 15px;
