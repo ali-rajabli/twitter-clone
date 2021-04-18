@@ -27,21 +27,28 @@
                 <div class="signup-inputs">
                     <h1>Create your account</h1>
                     <div class="form-floating name mb-4">
-                        <input type="text" class="form-control" id="signupNameInput" placeholder="Name" maxlength="50">
+                        <input type="text" class="form-control name" id="signupNameInput" placeholder="Name" maxlength="50">
                         <span id='charCount'></span>
                         <label for="signupNameInput">Name</label>
+                        <div id="" class="invalid-feedback">
+                            What’s your name?
+                          </div>
                     </div>
 
                     <div class="form-floating phone">
-                        <input  type="tel" class="form-control"  id="signupPhoneInput" spellcheck="true" autocorrect="on" placeholder="Phone">
+                        <input  type="tel" class="form-control phone"   id="signupPhoneInput" spellcheck="true" autocorrect="on" placeholder="Phone">
+                        <!-- onkeypress="return event.charCode >= 48 && event.charCode <= 57" -->
                         <label for="signupPhoneInput">Phone</label>
-                        <!-- <div id="" class="invalid-feedback">
-                            Please enter a valid phone nubmer
-                          </div> -->
+                        <div id="" class="invalid-feedback">
+                            Please enter a valid phone number.
+                          </div>
                     </div>
                     <div class="form-floating email">
-                        <input spellcheck="true" type="email" class="form-control " id="signupEmailInput" placeholder="Email">
+                        <input spellcheck="true" type="email" class="form-control email" id="signupEmailInput" placeholder="Email">
                         <label for="signupEmailInput">Email</label>
+                        <div id="" class="invalid-feedback">
+                            Please enter a valid email.
+                          </div>
                     </div>
                     <div class="signup-hint">
                         <a href="" id='changeToEmail'>Use email instead</a>
@@ -51,7 +58,7 @@
                     </div>
                     <div class="date-inputs">
                         <div class="form-floating col-6 me-2">
-                            <select class="form-select select-month" id="floatingSelectMonth" aria-label="Floating label select example">
+                            <select class="form-select select-month" id="signupSelectMonth" aria-label="Floating label select example">
                           <option selected></option>
                           <option value="1">January</option>
                           <option value="2">Febuary</option>
@@ -60,7 +67,7 @@
                             <label for="floatingSelectMonth">Month</label>
                         </div>
                         <div class="form-floating col-2 me-2">
-                            <select class="form-select select-day" id="floatingSelectDay" aria-label="Floating label select example">
+                            <select class="form-select select-day" id="signupSelectDay" aria-label="Floating label select example">
                           <option selected></option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -97,7 +104,7 @@
                             <label for="floatingSelectDay">Day</label>
                         </div>
                         <div class="form-floating col-4">
-                            <select class="form-select select-year" id="floatingSelectYear" aria-label="Floating label select example">
+                            <select class="form-select select-year" id="signupSelectYear" aria-label="Floating label select example">
                           <option selected></option>
                           <option value="1">One</option>
                           <option value="2">Two</option>

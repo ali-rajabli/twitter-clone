@@ -44,51 +44,171 @@ $('#signupNameInput').keyup(function () {
 
 
 
-// SignUp Page Phone input validation //
-
-// var phoneInput = $('#floatingPhoneInput')
-// var phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-// phoneInput.on('input',function(event) {
-// event.preventDefault
-// if(!$(this).val().match(phonePattern)) {
-//     console.log('invalid')
-// }
-     
-// })
-
-
-
-
 
 // SignUp Page Step-2 Checkbox activation //
 
-var trackCheckLabel = $('#trackCheckLabel') 
+var trackCheckLabel = $('#trackCheckLabel')
 var trackCheckInput = $('#trackCheckBox')
 
-trackCheckLabel.on('click',function() {
+trackCheckLabel.on('click', function () {
     $('.check-bg').toggleClass('active')
     $('.check-wrapper').toggleClass('active')
     trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
 })
 
-trackCheckInput.on('click',function(){
+trackCheckInput.on('click', function () {
     trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
 })
 
 
-// Login Page check if both inputs are empty  //
-var input = document.getElementById('loginEmailInput');
-var password = document.getElementById('loginPasswordInput');
+
+$('.step3 #step3NameInput').val('Ali Gurbanli')
+$('.step3 #step3PhoneInput').val('+994507224461')
+$('.step3 #step3DateInput').val('Feb 16, 1997')
 
 
-function validate() {
-    if (input.value.trim() && password.value.trim()) {
+//SignUp Page check if inputs are valid  //
+
+var signupNameInput = document.getElementById('signupNameInput');
+var signupPhoneInput = document.getElementById('signupPhoneInput');
+var signupEmailInput = document.getElementById('signupEmailInput');
+var signupSelectMonth = document.getElementById('signupSelectMonth');
+var signupSelectDay = document.getElementById('signupSelectDay');
+var signupSelectYear = document.getElementById('signupSelectYear');
+
+
+signupNameInput.onkeyup = function() {
+    if(!signupNameInput.value.trim()) {
+        signupNameInput.classList.remove('valid')
+        signupNameInput.classList.add('is-invalid')
+        validateSignUp()
+    }else {
+        signupNameInput.classList.add('valid')
+        signupNameInput.classList.remove('is-invalid')
+        validateSignUp()
+    }
+    
+}
+
+
+function validateSignUp() {
+    if (signupNameInput.classList.contains('valid') && 
+        signupPhoneInput.classList.contains('valid') &&
+        signupSelectMonth.value && 
+        signupSelectYear.value && 
+        signupSelectDay.value) {
+        document.querySelector('.next-btn').classList.remove('disabled');
+
+    } else if ( signupNameInput.classList.contains('valid') && 
+                signupEmailInput.classList.contains('valid') &&
+                signupSelectMonth.value &&
+                signupSelectYear.value && 
+                signupSelectDay.value 
+                ) { 
+        document.querySelector('.next-btn').classList.remove('disabled');
+        
+
+    } else {
+        document.querySelector('.next-btn').classList.add('disabled');
+
+    }
+}
+ signupNameInput.oninput = validateSignUp;
+ signupPhoneInput.oninput = validateSignUp;
+ signupEmailInput.oninput = validateSignUp;
+ signupSelectMonth.oninput = validateSignUp;
+ signupSelectDay.oninput = validateSignUp;
+ signupSelectYear.oninput = validateSignUp;
+
+
+
+// SignUp Page Email and Phone input validation //
+
+var emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+var phonePattern = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g;
+
+
+let timer,
+    timeoutVal = 500; // time it takes to wait for user to stop typing in ms
+
+let timer2,
+timeoutVal2 = 500; // time it takes to wait for user to stop typing in ms
+
+// pointers to our simple DOM elements
+
+// detects when the user is actively typing
+signupEmailInput.addEventListener('keypress', emailKeyPress);
+// triggers a check to see if the user is actually done typing
+signupEmailInput.addEventListener('keyup', emailKeyUp);
+
+signupPhoneInput.addEventListener('keypress', phoneKeyPress);
+signupPhoneInput.addEventListener('keyup', phoneKeyUp);
+
+function emailKeyUp(e) {
+    window.clearTimeout(timer); // prevent errant multiple timeouts from being generated
+    timer = window.setTimeout(() => {
+
+        if (this.value.match(emailPattern)) {
+            console.log('valid')
+            $('#signupEmailInput').removeClass('is-invalid')
+            $('#signupEmailInput').addClass('valid')
+            
+             validateSignUp()
+
+        } 
+        else{
+            console.log('invalid')
+            $('#signupEmailInput').addClass('is-invalid')
+            $('#signupEmailInput').removeClass('valid')
+
+            validateSignUp()
+        }
+       
+    }, timeoutVal);
+}
+
+function emailKeyPress(e) {
+    window.clearTimeout(timer2);
+}
+
+
+function phoneKeyPress(e) {
+    window.clearTimeout(timer2);
+}
+function phoneKeyUp(e) {
+    window.clearTimeout(timer2); // prevent errant multiple timeouts from being generated
+    timer2 = window.setTimeout(() => {
+
+        if (this.value.match(phonePattern)) {
+            console.log('valid')
+            $('#signupPhoneInput').removeClass('is-invalid')
+            $('#signupPhoneInput').addClass('valid')
+            validateSignUp()
+        } 
+        else{
+            console.log('invalid')
+            $('#signupPhoneInput').addClass('is-invalid')
+            $('#signupPhoneInput').removeClass('valid')
+            validateSignUp()
+
+        }
+    }, timeoutVal);
+}
+
+
+
+// Login Page check if inputs are valid  //
+var loginInput = document.getElementById('loginEmailInput');
+var loginPassword = document.getElementById('loginPasswordInput');
+
+
+function validateLogin() {
+    if (loginInput.value.trim() && loginPassword.value.trim()) {
         document.querySelector('.login-btn').classList.remove('disabled');
     } else {
         document.querySelector('.login-btn').classList.add('disabled');
     }
 }
 
-input.oninput = validate;
-password.oninput = validate;
+loginInput.oninput = validateLogin;
+loginPassword.oninput = validateLogin;
