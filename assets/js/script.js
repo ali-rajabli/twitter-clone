@@ -1,6 +1,30 @@
+// SignUp Page Step-5 Password Input validation //
+$("#step5PasswordInput").on('input', function() {
+    if ($(this).val().length >= 8) {
+        $(this).removeClass('is-invalid')
+        $(this).addClass('valid')
+    } else {
+        $(this).removeClass('valid')
+        $(this).addClass('is-invalid')
+    }
+})
+
+$('.step5-hint #show-pass').on('click', function() {
+    $(this).css('display', 'none')
+    $('.step5-hint #hide-pass').css('display', 'inline-block')
+    $('#step5PasswordInput').prop("type", "text");
+})
+$('.step5-hint #hide-pass').on('click', function() {
+    $(this).css('display', 'none')
+    $('.step5-hint #show-pass').css('display', 'inline-block')
+    $('#step5PasswordInput').prop("type", "password");
+})
+
+
+
 // SignUp page change input from phone to email // 
 
-$('#changeToEmail').click(function (event) {
+$('#changeToEmail').click(function(event) {
     event.preventDefault();
     $('.signup-inputs .form-floating.email').css('display', 'block')
     $('.signup-inputs .form-floating.phone').css('display', 'none')
@@ -8,7 +32,7 @@ $('#changeToEmail').click(function (event) {
     $('#changeToPhone').css('display', 'block')
 })
 
-$('#changeToPhone').click(function (event) {
+$('#changeToPhone').click(function(event) {
     event.preventDefault();
     $('.signup-inputs .form-floating.email').css('display', 'none')
     $('.signup-inputs .form-floating.phone').css('display', 'block')
@@ -27,7 +51,7 @@ function checkInp() {
 
 }
 
-$('.search-btn').on('click', function () {
+$('.search-btn').on('click', function() {
     checkInp()
 })
 
@@ -37,7 +61,7 @@ $('.search-btn').on('click', function () {
 var text_max = 50;
 $('#charCount').html('0 / ' + text_max);
 
-$('#signupNameInput').keyup(function () {
+$('#signupNameInput').keyup(function() {
     var text_length = $('#signupNameInput').val().trim().length;
     $('#charCount').html(text_length + ' / ' + text_max);
 });
@@ -50,13 +74,13 @@ $('#signupNameInput').keyup(function () {
 var trackCheckLabel = $('#trackCheckLabel')
 var trackCheckInput = $('#trackCheckBox')
 
-trackCheckLabel.on('click', function () {
+trackCheckLabel.on('click', function() {
     $('.check-bg').toggleClass('active')
     $('.check-wrapper').toggleClass('active')
     trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
 })
 
-trackCheckInput.on('click', function () {
+trackCheckInput.on('click', function() {
     trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
 })
 
@@ -65,6 +89,8 @@ trackCheckInput.on('click', function () {
 $('.step3 #step3NameInput').val('Ali Gurbanli')
 $('.step3 #step3PhoneInput').val('+994507224461')
 $('.step3 #step3DateInput').val('Feb 16, 1997')
+
+
 
 
 //SignUp Page check if inputs are valid  //
@@ -78,47 +104,47 @@ var signupSelectYear = document.getElementById('signupSelectYear');
 
 
 signupNameInput.onkeyup = function() {
-    if(!signupNameInput.value.trim()) {
+    if (!signupNameInput.value.trim()) {
         signupNameInput.classList.remove('valid')
         signupNameInput.classList.add('is-invalid')
         validateSignUp()
-    }else {
+    } else {
         signupNameInput.classList.add('valid')
         signupNameInput.classList.remove('is-invalid')
         validateSignUp()
     }
-    
+
 }
 
 
 function validateSignUp() {
-    if (signupNameInput.classList.contains('valid') && 
+    if (signupNameInput.classList.contains('valid') &&
         signupPhoneInput.classList.contains('valid') &&
-        signupSelectMonth.value && 
-        signupSelectYear.value && 
+        signupSelectMonth.value &&
+        signupSelectYear.value &&
         signupSelectDay.value) {
         document.querySelector('.next-btn').classList.remove('disabled');
 
-    } else if ( signupNameInput.classList.contains('valid') && 
-                signupEmailInput.classList.contains('valid') &&
-                signupSelectMonth.value &&
-                signupSelectYear.value && 
-                signupSelectDay.value 
-                ) { 
+    } else if (signupNameInput.classList.contains('valid') &&
+        signupEmailInput.classList.contains('valid') &&
+        signupSelectMonth.value &&
+        signupSelectYear.value &&
+        signupSelectDay.value
+    ) {
         document.querySelector('.next-btn').classList.remove('disabled');
-        
+
 
     } else {
         document.querySelector('.next-btn').classList.add('disabled');
 
     }
 }
- signupNameInput.oninput = validateSignUp;
- signupPhoneInput.oninput = validateSignUp;
- signupEmailInput.oninput = validateSignUp;
- signupSelectMonth.oninput = validateSignUp;
- signupSelectDay.oninput = validateSignUp;
- signupSelectYear.oninput = validateSignUp;
+signupNameInput.oninput = validateSignUp;
+signupPhoneInput.oninput = validateSignUp;
+signupEmailInput.oninput = validateSignUp;
+signupSelectMonth.oninput = validateSignUp;
+signupSelectDay.oninput = validateSignUp;
+signupSelectYear.oninput = validateSignUp;
 
 
 
@@ -132,7 +158,7 @@ let timer,
     timeoutVal = 500; // time it takes to wait for user to stop typing in ms
 
 let timer2,
-timeoutVal2 = 500; // time it takes to wait for user to stop typing in ms
+    timeoutVal2 = 500; // time it takes to wait for user to stop typing in ms
 
 // pointers to our simple DOM elements
 
@@ -152,18 +178,17 @@ function emailKeyUp(e) {
             console.log('valid')
             $('#signupEmailInput').removeClass('is-invalid')
             $('#signupEmailInput').addClass('valid')
-            
-             validateSignUp()
 
-        } 
-        else{
+            validateSignUp()
+
+        } else {
             console.log('invalid')
             $('#signupEmailInput').addClass('is-invalid')
             $('#signupEmailInput').removeClass('valid')
 
             validateSignUp()
         }
-       
+
     }, timeoutVal);
 }
 
@@ -175,6 +200,7 @@ function emailKeyPress(e) {
 function phoneKeyPress(e) {
     window.clearTimeout(timer2);
 }
+
 function phoneKeyUp(e) {
     window.clearTimeout(timer2); // prevent errant multiple timeouts from being generated
     timer2 = window.setTimeout(() => {
@@ -184,8 +210,7 @@ function phoneKeyUp(e) {
             $('#signupPhoneInput').removeClass('is-invalid')
             $('#signupPhoneInput').addClass('valid')
             validateSignUp()
-        } 
-        else{
+        } else {
             console.log('invalid')
             $('#signupPhoneInput').addClass('is-invalid')
             $('#signupPhoneInput').removeClass('valid')
