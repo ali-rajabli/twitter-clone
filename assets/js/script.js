@@ -103,7 +103,7 @@ var signupSelectDay = document.getElementById('signupSelectDay');
 var signupSelectYear = document.getElementById('signupSelectYear');
 
 
-signupNameInput.onkeyup = function() {
+signupNameInput.onkeyup = function() {  
     if (!signupNameInput.value.trim()) {
         signupNameInput.classList.remove('valid')
         signupNameInput.classList.add('is-invalid')
@@ -222,18 +222,4 @@ function phoneKeyUp(e) {
 
 
 
-// Login Page check if inputs are valid  //
-var loginInput = document.getElementById('loginEmailInput');
-var loginPassword = document.getElementById('loginPasswordInput');
 
-
-function validateLogin() {
-    if (loginInput.value.trim() && loginPassword.value.trim()) {
-        document.querySelector('.login-btn').classList.remove('disabled');
-    } else {
-        document.querySelector('.login-btn').classList.add('disabled');
-    }
-}
-
-loginInput.oninput = validateLogin;
-loginPassword.oninput = validateLogin;

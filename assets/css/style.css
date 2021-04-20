@@ -452,7 +452,8 @@ body {
 
 .signup-inner input[type=text]:focus,
 .signup-inner input[type=tel]:focus,
-.signup-inner input[type=email]:focus {
+.signup-inner input[type=email]:focus,
+.signup-inner input[type=password]:focus {
     outline: none;
     border: 2px solid var(--main-bg-color);
     box-shadow: none;
