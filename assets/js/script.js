@@ -21,6 +21,19 @@ $('.step5-hint #hide-pass').on('click', function() {
 })
 
 
+// Forgot input validation//
+
+$('#forgotInput').on('input',function(){
+    if(!$(this).val()) {
+        $(this).addClass('invalid')
+        $(this).removeClass('valid')
+
+    }else {
+        $(this).removeClass('invalid')
+        $(this).add('valid')
+
+    }
+})
 
 // SignUp page change input from phone to email // 
 
