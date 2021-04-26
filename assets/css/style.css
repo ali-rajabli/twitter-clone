@@ -160,7 +160,15 @@ body {
 }
 
 .main {
+    flex-direction: column;
     display: flex;
+}
+
+.main.signup.step2,
+.main.signup.step3,
+.main.signup.step4,
+.main.signup.step5 {
+    display: none;
 }
 
 .left-inner {
@@ -551,9 +559,14 @@ body {
 /* Forget Password page */
 
 .forgot-inner {
-    max-width: 590px;
+   display: flex;
+   max-width: 622px;
     width: 100%;
     margin: 0 auto;
+}
+
+.main.forgot .container {
+    max-width: 100%;
 }
 
 .main.forgot .nav {
@@ -566,7 +579,7 @@ body {
 
 .main.forgot .nav-inner {
     min-height: 40px;
-    max-width: 590px;
+    max-width: 622px;
     width: 100%;
     margin: auto;
     display: flex;
@@ -657,6 +670,13 @@ body {
     font-size: 28px;
     font-weight: 900;
     margin-bottom: 36px;
+}
+.forgot-content h2 {
+    display: none;
+    margin-bottom: 36px;
+   font-size: 28px;
+   color: #c33;
+   font-weight: 200;
 }
 
 .forgot-content p {
@@ -920,6 +940,9 @@ body {
     margin-top: 16px;
 }
 
+#step3EmailInput {
+    display: none;
+}
 
 /* SignUp Page step 4*/
 
