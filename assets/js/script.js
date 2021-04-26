@@ -1,5 +1,92 @@
+const users = [{
+        name: 'Ali',
+        phone: '0507224461',
+        email: 'ali.e.gurbanli@gmail.com'
+    },
+    {
+        name: 'Gulane',
+        phone: '0507898888',
+        email: 'gulane@gmail.com'
+    },
+    {
+        name: 'Ali',
+        phone: '0504809760',
+        email: 'ali.rajabli@gmail.com'
+    },
+
+]
+
+var signupUser = {
+    name: '',
+    phone: '',
+    email: '',
+    day:'',
+    month: '',
+    year: ''
+}
+
+
+$('#signupNameInput').on('blur',function(){
+    signupUser.name = $(this).val()
+}) 
+$('#signupPhoneInput').on('blur',function(){
+    signupUser.phone = $(this).val()
+    
+}) 
+$('#signupEmailInput').on('blur',function(){
+    signupUser.email = $(this).val()
+}) 
+
+$('#signupSelectMonth').on('blur',function(){
+    signupUser.month = $(this).find("option:selected").text()
+}) 
+$('#signupSelectDay').on('blur',function(){
+    signupUser.day = $(this).find("option:selected").text()
+}) 
+$('#signupSelectYear').on('blur',function(){
+    signupUser.year = $(this).find("option:selected").text()
+}) 
+
+
+$('.toStep2').on('click',function(){
+    if(signupEmailInput.classList.contains('valid')) {
+        $('#step3EmailInput').css('display','block')
+        $('#step3PhoneInput').css('display','none')
+
+    }else if (signupEmailInput.classList.contains('valid') && signupPhoneInput.classList.contains('valid')) { 
+        $('#step3EmailInput').css('display','block')
+        $('#step3PhoneInput').css('display','none')
+    }
+    $('#step3NameInput').val(signupUser.name)
+    $('#step3PhoneInput').val(signupUser.phone)
+    $('#step3EmailInput').val(signupUser.email)
+    $('#step3DateInput').val(`${signupUser.month.substr(0,3) } ${signupUser.day}, ${signupUser.year}`)
+})
+
+
+
+
+
+$('.toStep2').on('click',function() {
+    $('.main.signup').css('display','none')
+    $('.main.signup.step2').css('display','flex')
+})
+$('.toStep3').on('click',function() {
+    $('.main.signup.step2').css('display','none')
+    $('.main.signup.step3').css('display','flex')
+})
+$('.toStep4').on('click',function() {
+    $('.main.signup.step3').css('display','none')
+    $('.main.signup.step4').css('display','flex')
+})
+$('.toStep5').on('click',function() {
+    $('.main.signup.step4').css('display','none')
+    $('.main.signup.step5').css('display','flex')
+})
+
+
 // SignUp Page Step-5 Password Input validation //
-$("#step5PasswordInput").on('input', function() {
+$("#step5PasswordInput").on('input', function () {
     if ($(this).val().length >= 8) {
         $(this).removeClass('is-invalid')
         $(this).addClass('valid')
@@ -9,64 +96,71 @@ $("#step5PasswordInput").on('input', function() {
     }
 })
 
-$('.step5-hint #show-pass').on('click', function() {
+$('.step5-hint #show-pass').on('click', function () {
     $(this).css('display', 'none')
     $('.step5-hint #hide-pass').css('display', 'inline-block')
     $('#step5PasswordInput').prop("type", "text");
 })
-$('.step5-hint #hide-pass').on('click', function() {
+$('.step5-hint #hide-pass').on('click', function () {
     $(this).css('display', 'none')
     $('.step5-hint #show-pass').css('display', 'inline-block')
     $('#step5PasswordInput').prop("type", "password");
 })
 
 
+
+
 // Forgot input validation//
-
-$('#forgotInput').on('input',function(){
-    if(!$(this).val()) {
-        $(this).addClass('invalid')
-        $(this).removeClass('valid')
-
-    }else {
-        $(this).removeClass('invalid')
-        $(this).add('valid')
-
+function checkInp() {
+    if (!$('#forgotInput').val().trim()) {
+        $('#forgotInput').addClass('is-invalid')
+        return
+    } else {
+        $('#forgotInput').removeClass('is-invalid')
     }
+    for(u of users) {
+     
+        if($('#forgotInput').val() === u.name || $('#forgotInput').val() === (u.phone) || $('#forgotInput').val() === u.email){
+            $('#forgotInput').addClass('valid')
+            alert('valid')
+            return
+        }  else {
+            $('.forgot-content h1').css('display','none')
+            $('.forgot-content h2').css('display','block')
+            $('#forgotEnterText').html('Please try searching for your email, phone number or username again.')
+        }
+    }  
+    
+
+
+}
+
+$('.search-btn').on('click', function () {
+    checkInp()
 })
+
 
 // SignUp page change input from phone to email // 
 
-$('#changeToEmail').click(function(event) {
+$('#changeToEmail').click(function (event) {
     event.preventDefault();
     $('.signup-inputs .form-floating.email').css('display', 'block')
-    $('.signup-inputs .form-floating.phone').css('display', 'none')
+    $('.step1 .form-floating.phone').css('display', 'none')
     $('#changeToEmail').css('display', 'none')
     $('#changeToPhone').css('display', 'block')
 })
 
-$('#changeToPhone').click(function(event) {
+$('#changeToPhone').click(function (event) {
     event.preventDefault();
     $('.signup-inputs .form-floating.email').css('display', 'none')
-    $('.signup-inputs .form-floating.phone').css('display', 'block')
+    $('.step1 .form-floating.phone').css('display', 'block')
     $('#changeToEmail').css('display', 'block')
     $('#changeToPhone').css('display', 'none')
 })
 
 
-// ForgotPassword page  check if input is empty // 
-function checkInp() {
-    if (!$('#forgotInput').val().trim()) {
-        $('#forgotInput').addClass('is-invalid')
-    } else {
-        $('#forgotInput').removeClass('is-invalid')
-    }
 
-}
 
-$('.search-btn').on('click', function() {
-    checkInp()
-})
 
 
 // SignUp page Name input character count//
@@ -74,7 +168,7 @@ $('.search-btn').on('click', function() {
 var text_max = 50;
 $('#charCount').html('0 / ' + text_max);
 
-$('#signupNameInput').keyup(function() {
+$('#signupNameInput').keyup(function () {
     var text_length = $('#signupNameInput').val().trim().length;
     $('#charCount').html(text_length + ' / ' + text_max);
 });
@@ -87,21 +181,15 @@ $('#signupNameInput').keyup(function() {
 var trackCheckLabel = $('#trackCheckLabel')
 var trackCheckInput = $('#trackCheckBox')
 
-trackCheckLabel.on('click', function() {
+trackCheckLabel.on('click', function () {
     $('.check-bg').toggleClass('active')
     $('.check-wrapper').toggleClass('active')
     trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
 })
 
-trackCheckInput.on('click', function() {
+trackCheckInput.on('click', function () {
     trackCheckInput.prop("checked", !trackCheckInput.prop("checked"));
 })
-
-
-
-$('.step3 #step3NameInput').val('Ali Gurbanli')
-$('.step3 #step3PhoneInput').val('+994507224461')
-$('.step3 #step3DateInput').val('Feb 16, 1997')
 
 
 
@@ -116,7 +204,7 @@ var signupSelectDay = document.getElementById('signupSelectDay');
 var signupSelectYear = document.getElementById('signupSelectYear');
 
 
-signupNameInput.onkeyup = function() {  
+signupNameInput.onkeyup = function () {
     if (!signupNameInput.value.trim()) {
         signupNameInput.classList.remove('valid')
         signupNameInput.classList.add('is-invalid')
@@ -232,7 +320,3 @@ function phoneKeyUp(e) {
         }
     }, timeoutVal);
 }
-
-
-
-

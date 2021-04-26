@@ -16,13 +16,13 @@
 
 <body>
 
-    <section class="main signup">
+    <section class="main signup step1">
 
         <div class="container-fluid">
             <div class="signup-inner">
                 <div class="signup-header">
                     <img src="./assets/img/twitter-blue.svg" class="twitter-blue center" alt="">
-                    <button onclick='window.location.href="signup-step2.html"' id="btn-disable" type="button" class="btn next-btn disabled">Next</button>
+                    <button  id="btn-disable" type="button" class="btn toStep2 next-btn disabled">Next</button>
                 </div>
                 <div class="signup-inputs">
                     <h1>Create your account</h1>
@@ -106,9 +106,11 @@
                         <div class="form-floating col-4">
                             <select class="form-select select-year" id="signupSelectYear" aria-label="Floating label select example">
                           <option selected></option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option value="1">1997</option>
+                          <option value="2">1998</option>
+                          <option value="3">1999</option>
+                          <option value="4">2000</option>
+                          <option value="5">20001</option>
                         </select>
                             <label for="floatingSelectYear">Year</label>
                         </div>
@@ -120,7 +122,164 @@
 
     </section>
 
+    <section class="main signup step2">
 
+        <div class="container-fluid">
+            <div class="signup-inner step2">
+                <div class="signup-header step2">
+                    <div class="close-wrapper">
+                        <button onclick='window.location.href="signup.html"' type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+                    <img src="./assets/img/twitter-blue.svg" class="twitter-blue center" alt="">
+                    <button  id="btn-disable" type="button" class="btn toStep3 next-btn">Next</button>
+                </div>
+                <div class="step2-track">
+                    <h1>Customize your experience</h1>
+                    <strong>Track where you see Twitter content across the web</strong>
+                    <div class="track-check">
+                        <label id="trackCheckLabel" for="">
+                        <p>Twitter uses this data to personalize your experience. This web browsing history will never be stored with your name, email, or phone number.
+                        </p>
+                        <div class="check-wrapper">
+                            <div class="check-bg">
+                                <img src="./assets/img/check-white.svg" alt="">
+                            </div>
+                            <input type="checkbox" id="trackCheckBox" >
+                        </div>
+                    </label>
+                    </div>
+
+                    <span>For more details about these settings, visit the <a href="#">Help Center</a>.</span>
+                </div>
+
+            </div>
+
+    </section>
+
+    <section class="main signup step3">
+
+        <div class="container-fluid">
+            <div class="signup-inner step3">
+                <div class="signup-header step3">
+                    <div class="close-wrapper">
+                        <button onclick='window.location.href="signup.html"' type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+                    <h1>Step 3 of 5</h1>
+                </div>
+                <div class="signup-inputs step3">
+                    <h1>Create your account</h1>
+                    <div class="form-floating name mb-4">
+                        <input type="text" class="form-control" id="step3NameInput" placeholder="Name" maxlength="50">
+                        <label for="signupNameInput">Name</label>
+                    </div>
+
+                    <div class="form-floating phone">
+                        <input  type="tel" class="form-control"  id="step3PhoneInput" spellcheck="true" autocorrect="on" placeholder="Phone">
+                        <label for="signupPhoneInput">Phone</label>
+                        <!-- <div id="" class="invalid-feedback">
+                            Please enter a valid phone nubmer
+                          </div> -->
+                    </div>
+                    <div class="form-floating email">
+                        <input  type="email" class="form-control"  id="step3EmailInput" spellcheck="true" autocorrect="on" placeholder="Email">
+                        <label for="signupEmailInput">Email</label>
+                        <!-- <div id="" class="invalid-feedback">
+                            Please enter a valid phone nubmer
+                          </div> -->
+                    </div>
+                    <div class="form-floating name mt-4">
+                        <input type="text" class="form-control" id="step3DateInput" placeholder="Name" maxlength="50">
+                        <label for="signupNameInput">Birth date</label>
+                    </div>
+
+                    <div class="step3-policy">
+                        <p>By signing up, you agree to the 
+                            <a href="#">Terms of Service</a> and 
+                            <a href="#">Privacy Policy</a>, including 
+                            <a href="3">Cookie Use</a>. Others will be able to find you by email or phone number when provided · 
+                            <a href="#">Privacy Options</a>
+                        
+                        </p>
+                        <button id='btn-signup' class="toStep4">Sign Up</button>
+                    </div>
+                </div>
+                
+
+            </div>
+
+    </section>
+
+    <section class="main signup step4">
+
+        <div class="container-fluid">
+            <div class="signup-inner step4">
+                <div class="signup-header step4">
+                    <div class="close-wrapper">
+                        <button onclick='window.location.href="signup.html"' type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+                    <img src="./assets/img/twitter-blue.svg" class="twitter-blue center" alt="">
+                    <button  id="btn-disable" type="button" class="btn toStep5 next-btn">Next</button>
+                </div>
+
+                <div class="signup-inputs step4">
+                    <h1>We sent you a code</h1>
+                    <div class="step4-emailConfirm">
+                        <p>Enter the code in the field below to confirm example@mail.com.
+                        </p>
+                    </div>
+                    <div class="form-floating name mb-2">
+                        <input type="text" class="form-control" id="step4NameInput" placeholder="Name" maxlength="50">
+                        <label for="step4NameInput">Verification code</label>
+                    </div>
+                    <div class="step4-hint">
+                        <a href="">Didn't receive your email?</a>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+    </section>
+    <section class="main signup step5">
+
+        <div class="container-fluid">
+            <div class="signup-inner step5">
+                <div class="signup-header step5">
+                    <img src="./assets/img/twitter-blue.svg" class="twitter-blue center" alt="">
+                    <button id="btn-disable" type="button" class="btn next-btn">Next</button>
+                </div>
+
+                <div class="signup-inputs step5">
+                    <h1>You need a password</h1>
+                    <div class="step5-passwordConfirm">
+                        <p>You must enter at least 8 characters.
+                        </p>
+                    </div>
+                    <div class="form-floating name mb-2">
+                        <input type="password" class="form-control pass" id="step5PasswordInput" placeholder="Name" maxlength="50">
+                        <label for="step5PasswordInput">Password</label>
+                        <div id="" class="invalid-feedback">
+                            The password must be at least 8 characters. Please enter a longer password.
+                        </div>
+                    </div>
+                    <div class="step5-hint">
+                        <span id="show-pass">Show password</span>
+                        <span id="hide-pass">Hide password</span>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+    </section>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
