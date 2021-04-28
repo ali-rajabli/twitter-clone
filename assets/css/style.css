@@ -160,7 +160,6 @@ body {
 }
 
 .main {
-    flex-direction: column;
     display: flex;
 }
 
@@ -559,12 +558,14 @@ body {
 /* Forget Password page */
 
 .forgot-inner {
-   display: flex;
-   max-width: 622px;
+    display: flex;
+    max-width: 622px;
     width: 100%;
     margin: 0 auto;
 }
-
+.main.forgot {
+    flex-direction: column;
+}
 .main.forgot .container {
     max-width: 100%;
 }
@@ -671,12 +672,13 @@ body {
     font-weight: 900;
     margin-bottom: 36px;
 }
+
 .forgot-content h2 {
     display: none;
     margin-bottom: 36px;
-   font-size: 28px;
-   color: #c33;
-   font-weight: 200;
+    font-size: 28px;
+    color: #c33;
+    font-weight: 200;
 }
 
 .forgot-content p {
@@ -944,6 +946,7 @@ body {
     display: none;
 }
 
+
 /* SignUp Page step 4*/
 
 .step4-emailConfirm {
@@ -1001,43 +1004,151 @@ body {
 
 /* Authorized Home Page*/
 
-.left-slider {
-    width: 26%;
+
+.auth-left {
+    height: 100%;
+   
 }
 
-.left-main {
-    display: flex;
-    margin-left: 38%;
-}
 
-.left-elements {
+.auth-left-inner {
+    max-width: 275px;
+    height: 100%;
     display: flex;
+    padding-left: 60px;
+    padding-top: 5px;
     flex-direction: column;
+    justify-content: space-between;
+    
 }
 
-.left-elements img {
+
+.auth.twitter-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+.auth.twitter-logo:hover{
+    background-color: #e8f5fe;
+}
+
+.auth.twitter-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.twitter-logo img {
+    width: 30px;
+    height: 28px;
+}
+
+.auth-left .element img {
     width: 30px;
     height: 25px;
 }
 
-.twitter-logo {
-    padding: 10px;
-}
-
-.twitter-logo img {
-    width: 40px;
-    height: 30px;
-}
-
 .element {
+    width: fit-content;
     display: flex;
-    padding: 15px;
-    margin-top: 5px;
+    padding: 9px 12px;
+    margin-top: 3px;
     cursor: pointer;
     transition-duration: 100ms;
+    text-decoration: none;
 }
 
-.element h1 {
+.twitter-logo-home span::before {
+    content: url('../img/twitter-home-black.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-home:hover span::before {
+    content: url('../img/twitter-home-blue.svg');
+
+}
+.twitter-logo-explore span::before {
+    content: url('../img/sharp-black.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-explore:hover span::before {
+    content: url('../img/sharp-blue.svg');
+
+}
+
+.twitter-logo-notifications span::before {
+    content: url('../img/notification.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+.twitter-logo-notifications:hover span::before {
+    content: url('../img/notification-blue.svg');
+
+}
+.twitter-logo-messages span::before {
+    content: url('../img/message.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+.twitter-logo-messages:hover span::before {
+    content: url('../img/message-blue.svg');
+
+}
+
+.twitter-logo-bookmarks span::before {
+    content: url('../img/bookmark.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+.twitter-logo-bookmarks:hover span::before {
+    content: url('../img/bookmark-blue.svg');
+
+}
+
+.twitter-logo-lists span::before {
+    content: url('../img/list.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+.twitter-logo-lists:hover span::before {
+    content: url('../img/list-blue.svg');
+
+}
+.twitter-logo-profile span::before {
+    content: url('../img/profile.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+.twitter-logo-profile:hover span::before {
+    content: url('../img/profile-blue.svg');
+
+}
+.twitter-logo-more span::before {
+    content: url('../img/more.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+.twitter-logo-more:hover span::before {
+    content: url('../img/more-blue.svg');
+
+}
+
+
+.element span {
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -1047,18 +1158,191 @@ body {
 }
 
 .element:hover {
-    width: max-content;
     background-color: #e8f5fe;
     border-radius: 24px;
 }
 
-.element h1:hover {
-    width: max-content;
-    background-color: #e8f5fe;
-    border-radius: 24px;
+.element:hover span {
     color: #1DA1F2;
 }
 
+.btn-tweet {
+    margin-top: 10px;
+    /* width: 100%; */
+    width: 220px;
+    height: 48px;
+    background-color: var(--main-bg-color);
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 13px;
+    border-radius: 25px;
+    outline: none;
+    transition-duration: 100ms;
+}
+
+.btn-tweet:hover {
+    color: #fff;
+    background-color: rgb(26, 145, 218);
+}
+
+.auth-left-profile {
+    cursor: pointer;
+    position: relative;
+}
+
+.auth-left-profile .main-profile {
+    width: fit-content;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px;
+
+}
+
+.auth-left-profile .main-profile:hover {
+    background-color: #e8f5fe;
+}
+
+.auth-left-profile .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.auth-left-profile .profile-name {
+    margin-left: 10px;
+}
+
+.auth-left-profile .profile-name h1 {
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #0f1419;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.auth-left-profile .profile-name span {
+    color: #5b7083;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+
+.auth-left-profile .profile-dots img {
+    width: 16px;
+    height: 16px;
+}
+.auth-left-profile .profile-dots {
+    margin-left: 40px;
+}
+.page-wrapper{
+    display: none;
+}
+.page-wrapper.active {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.pop-profile {
+    display: none;
+}
+.pop-profile.active {
+    display: flex;
+    padding: 12px 0;
+    width: 300px;
+    height: 202px;
+    position: absolute;
+    left: -10px;
+    top: -212px;
+    flex-direction: column;
+    background-color: rgba(255,255,255,1.00);
+    box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+    border-radius: 16px;
+    z-index: 2;
+
+    
+}
+.pop-profile::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    filter: drop-shadow(rgb(196, 207, 214) -1px 1px 1px);
+}
+.pop-profile-inner {
+    display: flex;
+    flex-direction: column;
+}
+.pop-profile-credits {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.pop-profile-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.pop-profile-name {
+    margin-left: 10px;
+}
+ .pop-profile-name h1 {
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #0f1419;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.pop-profile-name span {
+    color: #5b7083;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.pop-profile-check {
+    margin-left: auto;
+}
+.pop-profile-check img {
+    width: 16px;
+    height: 16px;
+}
+
+.pop-profile-add {
+    padding: 16px;
+    border-top: 1px solid ;
+    border-bottom: 1px solid ;
+    border-color: rgb(235, 238, 240)
+}
+.pop-profile-logout {
+    padding: 16px   ;
+}
+.pop-profile-add:hover ,
+.pop-profile-logout:hover {
+    background-color: rgb(247,249,250);
+}
+.pop-profile-add span,
+.pop-profile-logout span {
+    font-size: 15px;
+    color: #0f1419;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 @media only screen and (max-width: 992px) {
     .footer-nav ul li a {
         line-height: 30px;
