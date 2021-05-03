@@ -111,7 +111,7 @@
                     </div>
                 </section>
                 <main class="auth-center col-6">
-                    
+
                     <div class="auth-center-inner">
                         <div class="auth-center-head">
                             <div class="latest-tweets">
@@ -165,22 +165,22 @@
                                             </div>
                                             <div class="pop-reply-everyone">
                                                 <div class="everyone-wrap">
-                                                  <img src="./assets/img/world-white.svg" alt="">
-                                             </div>
+                                                    <img src="./assets/img/world-white.svg" alt="">
+                                                </div>
                                                 <span>Everyone</span>
-                                            <img style="width:16px; height: 16px; margin-left: auto;"   src="./assets/img/check-blue.svg" alt="">
+                                                <img style="width:16px; height: 16px; margin-left: auto;" src="./assets/img/check-blue.svg" alt="">
 
                                             </div>
                                             <div class="pop-reply-followed">
                                                 <div class="followed-wrap">
                                                     <img src="./assets/img/person.svg" alt="">
-                                             </div>
+                                                </div>
                                                 <span>People you follow</span>
                                             </div>
                                             <div class="pop-reply-mentioned">
                                                 <div class="mentioned-wrap">
                                                     <img src="./assets/img/at.svg" alt="">
-                                             </div>
+                                                </div>
                                                 <span>Only people you mention</span>
                                             </div>
                                         </div>
@@ -193,21 +193,21 @@
                                             </div>
                                             <div class="pop-reply-everyone">
                                                 <div class="everyone-wrap">
-                                                  <img src="./assets/img/world-white.svg" alt="">
-                                             </div>
+                                                    <img src="./assets/img/world-white.svg" alt="">
+                                                </div>
                                                 <span>Everyone</span>
                                             </div>
                                             <div class="pop-reply-followed">
                                                 <div class="followed-wrap">
                                                     <img src="./assets/img/person.svg" alt="">
-                                             </div>
+                                                </div>
                                                 <span>People you follow</span>
-                                                <img style="width:16px; height: 16px; margin-left: auto;"   src="./assets/img/check-blue.svg" alt="">
+                                                <img style="width:16px; height: 16px; margin-left: auto;" src="./assets/img/check-blue.svg" alt="">
                                             </div>
                                             <div class="pop-reply-mentioned">
                                                 <div class="mentioned-wrap">
                                                     <img src="./assets/img/at.svg" alt="">
-                                             </div>
+                                                </div>
                                                 <span>Only people you mention</span>
                                             </div>
                                         </div>
@@ -220,25 +220,25 @@
                                             </div>
                                             <div class="pop-reply-everyone">
                                                 <div class="everyone-wrap">
-                                                  <img src="./assets/img/world-white.svg" alt="">
-                                             </div>
+                                                    <img src="./assets/img/world-white.svg" alt="">
+                                                </div>
                                                 <span>Everyone</span>
                                             </div>
                                             <div class="pop-reply-followed">
                                                 <div class="followed-wrap">
                                                     <img src="./assets/img/person.svg" alt="">
-                                             </div>
+                                                </div>
                                                 <span>People you follow</span>
                                             </div>
                                             <div class="pop-reply-mentioned">
                                                 <div class="mentioned-wrap">
                                                     <img src="./assets/img/at.svg" alt="">
-                                             </div>
+                                                </div>
                                                 <span>Only people you mention</span>
-                                                <img style="width:16px; height: 16px; margin-left: auto;"   src="./assets/img/check-blue.svg" alt="">
+                                                <img style="width:16px; height: 16px; margin-left: auto;" src="./assets/img/check-blue.svg" alt="">
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="post-reply everyone">
                                         <img src="./assets/img/world.svg" alt="">
                                         <span>Everyone can reply</span>
@@ -251,9 +251,9 @@
                                         <img src="./assets/img/at-blue.svg" alt="">
                                         <span>Only people you mention can reply</span>
                                     </div>
-                            </div>
+                                </div>
                                 <div class="post-media">
-                                   
+
                                     <div class="post-media-inputs">
                                         <div class="post-item file">
                                             <label for="file-choice">
@@ -282,6 +282,18 @@
                         </div>
                     </div>
                 </main>
+                <section class="auth-right col-3">
+                    <div class="auth-right-inner">
+                        <div class="right-search">
+                            <div class="search-img">
+                                <img src="./assets/img/loupe.svg" alt="">
+                            </div>
+                            <div class="search-content">
+                                <input class="me-2" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </section>
@@ -298,7 +310,7 @@
 
         $(document).mouseup(function(e) {
             var profile = $(".pop-profile");
-            var latest  = $(".latest-tweets")
+            var latest = $(".latest-tweets")
             var reply = $(".pop-reply");
             // if the target of the click isn't the container nor a descendant of the container
             if (profile.hasClass('active') && !profile.is(e.target) && profile.has(e.target).length === 0) {
@@ -308,73 +320,72 @@
                 latest.removeClass('active');
                 $('.page-wrapper').removeClass('active')
 
-            }else if (reply.hasClass('active') && !reply.is(e.target) && reply.has(e.target).length === 0) {
+            } else if (reply.hasClass('active') && !reply.is(e.target) && reply.has(e.target).length === 0) {
                 reply.removeClass('active');
                 $('.page-wrapper').removeClass('active')
 
             }
         });
 
-        $('#tweet-text').on('focus',function(){
-            $('.post-reply-holder').css('display','block')
-            if($('.post-reply.everyone').hasClass('active')){
+        $('#tweet-text').on('focus', function() {
+            $('.post-reply-holder').css('display', 'block')
+            if ($('.post-reply.everyone').hasClass('active')) {
                 return
-            }else if ($('.post-reply.followed').hasClass('active')){
+            } else if ($('.post-reply.followed').hasClass('active')) {
                 return
-            }else if ($('.post-reply.mentioned').hasClass('active')) {
+            } else if ($('.post-reply.mentioned').hasClass('active')) {
                 return
-            }else if(!$('.post-reply').hasClass('active')){
+            } else if (!$('.post-reply').hasClass('active')) {
                 $('.post-reply.everyone').addClass('active')
-            }   
-        }) 
+            }
+        })
 
 
-        $('.top-tweets').on('click',function(){
+        $('.top-tweets').on('click', function() {
             $('.latest-tweets').addClass('active')
             $('.page-wrapper').addClass('active')
 
         })
 
-        $('.post-reply.everyone').on('click',function(){
+        $('.post-reply.everyone').on('click', function() {
             $(this).addClass('active')
             $('.pop-reply.everyone').addClass('active')
             $('.page-wrapper').addClass('active')
 
         })
-        $('.post-reply.followed').on('click',function(){
+        $('.post-reply.followed').on('click', function() {
             $(this).addClass('active')
             $('.pop-reply.followed').addClass('active')
             $('.page-wrapper').addClass('active')
 
         })
-        $('.post-reply.mentioned').on('click',function(){
+        $('.post-reply.mentioned').on('click', function() {
             $(this).addClass('active')
             $('.pop-reply.mentioned').addClass('active')
             $('.page-wrapper').addClass('active')
 
         })
-         $('.pop-reply-everyone').on('click',function(){
+        $('.pop-reply-everyone').on('click', function() {
             $('.post-reply').removeClass('active');
             $('.post-reply.everyone').addClass('active')
             $('.pop-reply').removeClass('active')
             $('.page-wrapper').removeClass('active')
         })
 
-        $('.pop-reply-followed').on('click',function(){
+        $('.pop-reply-followed').on('click', function() {
             $('.post-reply').removeClass('active');
             $('.post-reply.followed').addClass('active')
             $('.pop-reply').removeClass('active')
             $('.page-wrapper').removeClass('active')
 
         });
-        $('.pop-reply-mentioned').on('click',function(){
+        $('.pop-reply-mentioned').on('click', function() {
             $('.post-reply').removeClass('active');
             $('.post-reply.mentioned').addClass('active')
             $('.pop-reply').removeClass('active')
             $('.page-wrapper').removeClass('active')
 
         })
-
     </script>
 
 </body>

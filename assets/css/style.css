@@ -1450,6 +1450,7 @@ body {
     width: 100%;
     resize: none;
 }
+
 .post-reply-holder {
     position: relative;
     display: none;
@@ -1461,9 +1462,11 @@ body {
 .post-reply.everyone {
     display: none;
 }
+
 .post-reply.followed {
     display: none;
 }
+
 .post-reply.mentioned {
     display: none;
 }
@@ -1497,6 +1500,7 @@ body {
     color: #1DA1F2;
     font-weight: 700;
 }
+
 .post-media-inputs {
     display: flex;
     align-items: center;
@@ -1521,10 +1525,12 @@ body {
     width: 23px;
     height: 23px;
 }
-.post-item.file > label {
+
+.post-item.file>label {
     height: 23px;
     width: 23px;
 }
+
 .post-item.file input {
     cursor: pointer;
     position: absolute;
@@ -1533,9 +1539,11 @@ body {
     z-index: 1;
     opacity: 0;
 }
-.post-item.file input[type=file]::-webkit-file-upload-button { 
-    cursor: pointer; 
+
+.post-item.file input[type=file]::-webkit-file-upload-button {
+    cursor: pointer;
 }
+
 .post-item {
     cursor: pointer;
     width: 40px;
@@ -1544,47 +1552,54 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-} 
+}
+
 .post-item:not(:first-child) {
     margin-left: 10px
 }
 
 .post-item:hover {
     background-color: #e8f5fe;
-    
 }
-.post-media-button .btn-tweet{
+
+.post-media-button .btn-tweet {
     margin-top: 0;
     width: 77px;
     height: 40px;
 }
+
 .latest-tweets {
     display: none;
 }
+
 .latest-tweets.active {
     display: block;
     z-index: 999;
     right: 6px;
     top: 6px;
-    width:351px;
+    width: 351px;
     height: 239px;
     position: absolute;
     background-color: rgba(255, 255, 255, 1.00);
     box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
 }
+
 .latest-tweets-inner {
     display: flex;
     flex-direction: column;
 }
+
 .latest-img {
     padding: 16px 20px;
     display: flex;
     justify-content: center;
 }
+
 .latest-img img {
     width: 50px;
     height: 50px;
 }
+
 .latest-text {
     border-bottom: 1px solid;
     border-color: rgb(235, 238, 240);
@@ -1595,18 +1610,20 @@ body {
     font-weight: 700;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
+
 .latest-switch-inner {
     cursor: pointer;
     align-items: center;
     padding: 16px;
     display: flex;
 }
+
 .latest-switch-inner:hover,
 .latest-preference-inner:hover {
     background-color: rgb(247, 249, 250);
-
 }
-.switch-hint{
+
+.switch-hint {
     margin-left: 12px;
     display: flex;
     flex-direction: column;
@@ -1616,8 +1633,9 @@ body {
     margin-bottom: 8px;
     font-size: 16px;
     color: #000;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
+
 .switch-hint span {
     font-size: 13px;
     color: #5b7083;
@@ -1630,31 +1648,36 @@ body {
     display: flex;
     align-items: center;
 }
+
 .latest-preference-inner span {
     font-size: 15px;
     color: #0f1419;
     margin-left: 12px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
+
 .latest-tweets .latest-switch img {
     width: 20px;
     height: 20px;
 }
-.latest-tweets  .latest-preference img {
+
+.latest-tweets .latest-preference img {
     width: 20px;
     height: 20px;
 }
 
-.pop-reply.followed{
+.pop-reply.followed {
     display: none;
 }
+
 .pop-reply.mentioned {
     display: none;
 }
+
 .pop-reply.everyone {
     display: none;
-
 }
+
 .pop-reply.active {
     display: block;
     border-radius: 15px;
@@ -1669,36 +1692,40 @@ body {
     left: -83px;
     z-index: 999;
 }
+
 .pop-reply::before {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top:-9px;
+    top: -9px;
     content: '';
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
     border-bottom: 9px solid #fff;
     filter: drop-shadow(rgb(196, 207, 214) 1px -1px 1px);
-
 }
+
 .pop-reply-inner img {
     width: 23px;
     height: 23px;
 }
+
 .pop-reply-hint {
     padding: 0 16px;
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
 }
+
 .pop-reply-hint strong {
     margin-bottom: 5px;
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 700;
 }
+
 .pop-reply-hint span {
     line-height: 20px;
     color: #5b7083;
@@ -1715,6 +1742,7 @@ body {
     align-items: center;
     padding: 12px 16px;
 }
+
 .pop-reply-everyone:hover,
 .pop-reply-followed:hover,
 .pop-reply-mentioned:hover {
@@ -1726,19 +1754,74 @@ body {
 .pop-reply-mentioned span {
     margin-left: 12px;
     font-size: 15px;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .everyone-wrap,
 .followed-wrap,
 .mentioned-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-   width: 40px;
-   height: 40px;
-   background: #20a1f1;
-   border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: #20a1f1;
+    border-radius: 50%;
 }
+
+
+/* Authorized page Right */
+
+.auth-right {
+    height: 100%;
+}
+
+.auth-right-inner {
+    width: 320px;
+    display: flex;
+    padding-top: 5px;
+    justify-content: flex-end;
+}
+
+.right-search {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.right-search .search-img {
+    padding: 12px;
+    padding-right: 15px;
+    display: flex;
+    background-color: #ebeef0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.right-search .search-img img {
+    align-self: center;
+    width: 36px;
+    height: 16px;
+}
+
+.right-search .search-content {
+    padding: 12px;
+    background-color: #ebeef0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.right-search .search-content input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #5b7083;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+    background-color: #ebeef0;
+}
+
 @media only screen and (max-width: 992px) {
     .footer-nav ul li a {
         line-height: 30px;
@@ -1771,7 +1854,6 @@ body {
         margin-right: 20px;
     }
 }
-
 
 @media only screen and (max-width: 768px) {
     .nav-inner,
